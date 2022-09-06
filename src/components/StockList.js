@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import finnHub from '../apis/finnHub'
+import { BsFillCaretDownFill } from 'react-icons/bs'
 export const StockList = () => {
   const [stock, setStock] = useState([])
   const [watchList, setWatchList] = useState(['GOOGL', 'MSFT', 'AMZN'])
@@ -56,24 +57,31 @@ export const StockList = () => {
                 <th scope="row">{stockData.symbol}</th>
                 <td className={`text-${stockData.data.c < 0 && 'danger'}`}>
                   {stockData.data.c}
+                  {stockData.data.c < 0 && <BsFillCaretDownFill />}
                 </td>
                 <td className={`text-${stockData.data.d < 0 && 'danger'}`}>
                   {stockData.data.d}
+                  {stockData.data.d < 0 && <BsFillCaretDownFill />}
                 </td>
                 <td className={`text-${stockData.data.dp < 0 && 'danger'}`}>
                   {stockData.data.dp}
+                  {stockData.data.dp < 0 && <BsFillCaretDownFill />}
                 </td>
                 <td className={`text-${stockData.data.h < 0 && 'danger'}`}>
                   {stockData.data.h}
+                  {stockData.data.h < 0 && <BsFillCaretDownFill />}
                 </td>
                 <td className={`text-${stockData.data.l < 0 && 'danger'}`}>
                   {stockData.data.l}
+                  {stockData.data.l < 0 && <BsFillCaretDownFill />}
                 </td>
                 <td className={`text-${stockData.data.o < 0 && 'danger'}`}>
                   {stockData.data.o}
+                  {stockData.data.o < 0 && <BsFillCaretDownFill />}
                 </td>
                 <td className={`text-${stockData.data.pc < 0 && 'danger'}`}>
                   {stockData.data.pc}
+                  {stockData.data.pc < 0 && <BsFillCaretDownFill />}
                 </td>
               </tr>
             )
